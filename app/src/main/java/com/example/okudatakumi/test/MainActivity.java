@@ -8,15 +8,23 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class MainActivity extends AppCompatActivity {
-//test
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //>>Webページを表示してみる
+        WebView myWebView = (WebView) findViewById(R.id.WebView);
+        myWebView.setWebViewClient(new WebViewClient());
+        myWebView.loadUrl("http://zny.daddy-pool.work/stats");
+        //<<Webページを表示してみる
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
