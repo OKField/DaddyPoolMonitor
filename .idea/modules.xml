@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/DaddyPoolMonitor.iml" filepath="$PROJECT_DIR$/.idea/DaddyPoolMonitor.iml" />
+      <module fileurl="file://C:\Users\MINATO\AndroidStudioProjects\testOKF\.idea\DaddyPoolMonitor.iml" filepath="C:\Users\MINATO\AndroidStudioProjects\testOKF\.idea\DaddyPoolMonitor.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://C:\Users\Masa\AndroidStudioProjects\DaddyPoolMonitor\app\app.iml" filepath="C:\Users\Masa\AndroidStudioProjects\DaddyPoolMonitor\app\app.iml" />
       <module fileurl="file://C:\Users\MINATO\AndroidStudioProjects\testOKF\test.iml" filepath="C:\Users\MINATO\AndroidStudioProjects\testOKF\test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testOKF.iml" filepath="$PROJECT_DIR$/testOKF.iml" />
       <module fileurl="file://C:\Users\Masa\AndroidStudioProjects\DaddyPoolMonitor\.idea\testOKF.iml" filepath="C:\Users\Masa\AndroidStudioProjects\DaddyPoolMonitor\.idea\testOKF.iml" />
     </modules>
   </component>
