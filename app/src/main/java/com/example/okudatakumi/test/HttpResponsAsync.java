@@ -1,4 +1,9 @@
+package com.example.okudatakumi.test;
+
+
+import android.content.Context;
 import android.os.AsyncTask;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -14,10 +19,16 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * Created by okudatakumi on 2018/03/12.
+ * Created by  on 2018/03/12.
  */
 
 public class HttpResponsAsync extends AsyncTask<Void, Void, String> {
+    //private TextView textView;
+    //MainActivity _mainAct;
+    //public HttpResponsAsync(MainActivity mainAct) {
+    //    _mainAct = mainAct;
+    //}
+    private CallBackTask callbacktask;
 
     @Override
     protected void onPreExecute() {
@@ -52,6 +63,7 @@ public class HttpResponsAsync extends AsyncTask<Void, Void, String> {
 
             // 配列を取得する場合
             JSONArray jsonArray = new JSONObject(readSt).getJSONArray("オブジェクト名");
+            //textView.setText("aaaaa");
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -88,8 +100,18 @@ public class HttpResponsAsync extends AsyncTask<Void, Void, String> {
     //@Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
-        // doInBackground後処理
+               // doInBackground後処理
+        callbacktask.CallBack(result);
     }
 
-
+    public void setOnCallBack(CallBackTask _cbj) {
+        callbacktask = _cbj;
+    }
+    /**
+     * コールバック用のstaticなclass
+     */
+    public static class CallBackTask {
+        public void CallBack(String result) {
+        }
+    }
 }
