@@ -1,6 +1,7 @@
 package com.example.okudatakumi.test;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.TextView;
@@ -22,14 +23,14 @@ import java.net.URL;
  * Created by  on 2018/03/12.
  */
 
-public class HttpResponsAsync extends AsyncTask<Void, Void, String> {
+public class HttpResponsAsync extends AsyncTask<String, Void, String> {
     //private TextView textView;
     //MainActivity _mainAct;
     //public HttpResponsAsync(MainActivity mainAct) {
     //    _mainAct = mainAct;
     //}
     private CallBackTask callbacktask;
-
+    private MainActivity m_Activity;
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
@@ -37,7 +38,7 @@ public class HttpResponsAsync extends AsyncTask<Void, Void, String> {
     }
 
     @Override
-    protected String doInBackground(Void... params) {
+    protected String doInBackground(String... params) {
         HttpURLConnection con = null;
         URL url = null;
         String urlSt = "http://zny.daddy-pool.work/api/stats";
@@ -99,9 +100,17 @@ public class HttpResponsAsync extends AsyncTask<Void, Void, String> {
 
     //@Override
     protected void onPostExecute(String result) {
-        super.onPostExecute(result);
+        //super.onPostExecute(result);
                // doInBackground後処理
-        callbacktask.CallBack(result);
+
+        // 読み出し元Activityに設置してあるTextViewを取得
+        TextView textView = (TextView)this.m_Activity.findViewById(R.id.textView2);
+
+        // TextViewの文字列をセット
+        textView.setText(result);
+        textView.setText("12345");
+        return;
+        //callbacktask.CallBack(result);
     }
 
     public void setOnCallBack(CallBackTask _cbj) {

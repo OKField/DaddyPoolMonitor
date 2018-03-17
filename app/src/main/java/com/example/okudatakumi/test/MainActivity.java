@@ -14,6 +14,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
 
+import java.net.URL;
+
 public class MainActivity extends AppCompatActivity {
 
         @Override
@@ -30,20 +32,20 @@ public class MainActivity extends AppCompatActivity {
         //textView.setText("Test TextView");
         textView.setText(R.string.text);
 
-        HttpResponsAsync httpResponsAsync = new HttpResponsAsync();
+       // HttpResponsAsync httpResponsAsync = new HttpResponsAsync();
         //new HttpResponsAsync();
-         httpResponsAsync.setOnCallBack(new HttpResponsAsync.CallBackTask(){
-         @Override
-         public void CallBack(String result) {
-         super.CallBack(result);
+         //httpResponsAsync.setOnCallBack(new HttpResponsAsync.CallBackTask(){
+         //@Override
+            //public void CallBack(String result) {
+            //super.CallBack(result);
 
          /// / ※１
          // resultにはdoInBackgroundの返り値が入ります。
          // ここからAsyncTask処理後の処理を記述します。
-                    Log.i("AsyncTaskCallback", "非同期処理が終了しました。");
-                }
-         });
-        httpResponsAsync.execute();
+//                    Log.i("AsyncTaskCallback", "非同期処理が終了しました。");
+            //              }
+            //});
+        //httpResponsAsync.execute();
 
         //>>Webページを表示してみる
         WebView myWebView = (WebView) findViewById(R.id.WebView);
